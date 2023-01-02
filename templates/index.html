@@ -1,36 +1,21 @@
 {% extends 'headerfooter.html' %}
-
 {% block title%}Index{% endblock %}
-
 {% block style%}
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
-
 body {
 background-color: #fff;
 }
-
-
-.button {
+.button1 {
 background-color: rgb(163, 133, 77);
-width: auto;
-padding: 11px 32px;
-text-align: center;
-color: #fff;
-border: none;
-text-decoration: none;
-font-size: 15px;
-font-weight: 500;
--webkit-transition-duration: 0.4s;
 transition-duration: 0.5s;
 box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.235), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
 }
-
-.button2:hover {
+.button2 {
+background-color: rgb(163, 133, 77);
+}
+.button1:hover {
 box-shadow: none;
 }
-
-
-
 .textmidline {
 width: 100%;
 text-align: center;
@@ -38,45 +23,212 @@ border-bottom: 1px solid #000;
 line-height: 0.1em;
 margin: 10px 0 20px;
 }
-
 .textmidline2 {
 background: #fff;
 padding: 0 10px;
 }
-
-.imagegallery:hover {
-opacity: 0.3;
+.contactusform:focus{
+border-color: #000;
+}
+.inputborder{
+border: 2px solid rgb(163, 133, 77);
+}
+.inputborder:focus{
+border: 2px solid rgb(163, 133, 77);
+}
+.pic{
+transition: transform .5s, filter 1.5s ease-in-out;
+}
+.pic:hover {
+transform: scale(1.03);
+}
+.form-control:focus {
+outline: 1.5px solid black;
+box-shadow: none;
 }
 {% endblock %}
-
-{% block body%} <center>
-    <div class="container">
-        <img src="https://img1.wsimg.com/isteam/stock/73j5my4/:/rs=w:3070,m" alt="image" class="container"
-            style="object-fit: cover; max-height: 400px; min-height: 190px; max-width: 1010px; min-width: 300px;">
+{% block body%}
+<center>
+    <div class="container mt-5">
+        <img src="https://img1.wsimg.com/isteam/stock/73j5my4/:/rs=w:3070,m" width="100%" alt="image"
+            style="max-height: 600px;object-fit:cover;">
     </div>
     <br>
-    <h3 class="mt-3"
-        style="font-family: 'Abril Fatface', cursive; color: rgb(140, 114, 66);font-size: 27px ; letter-spacing: 3px;">
-        create your story of
-        a Wandering Soul</h3>
+    <p class="mt-3 font2 h1 "> create your story of a Wandering Soul</p>
     <br>
-    <p style="color: rgb(94, 94, 94);;">Join us and be part of our adventures!</p>
+    <p class="font fs-2 text-secondary">Join us and be part of our adventures!</p>
     <br>
-    <button class="button button2">Contact Us</button>
-    <br> <br>
-
-    <h2 class="textmidline" style="max-width: 1010px; min-width: 300px; font-size: 16px; color:rgb(89, 89, 89);">
-        <span class="textmidline2" style="background-color: #f1f1f1;">About Us</span>
+    <button class="button1 rounded-0 px-4 p-2 border-0 text-white btn-lg font fs-2 fw-bold text-white"
+        style="height: 60px;width: 200px;">Contact
+        Us</button>
+    <br> <br><br> <br><br> <br>
+    <!-- =============================================     Flight Search Start      ==================================-->
+    <div id="exTab2" class="container mt-5">
+        <ul class="nav nav-tabs inputborder font">
+            <li class="active">
+                <a href="#1" data-toggle="tab" style="color: rgb(163, 133, 77);">Stays</a>
+            </li>
+            <li><a href="#2" data-toggle="tab" style="color: rgb(163, 133, 77);">Flights</a>
+            </li>
+            <li><a href="#3" data-toggle="tab" style="color: rgb(163, 133, 77);">Things To Do</a>
+            </li>
+        </ul>
+        <!-- =============================================     Stays      ==================================-->
+        <div class="tab-content inputborder">
+            <div class="tab-pane active" id="1">
+                <br><br>
+                <div class="input-group px-4">
+                    <span class="input-group-addon inputborder font mx-5"><i class="fa">&#xf3c5;</i>
+                    </span>
+                    <input type="text" class="form-control inputborder font" name="email" placeholder="Location">
+                </div><br>
+                <form>
+                    <div class="row">
+                        <div class="col px-5">
+                            <div class="input-group">
+                                <span class="inputborder font input-group-addon w-25">Check-In
+                                </span>
+                                <input type="date" class="form-control inputborder font " name="email">
+                            </div>
+                        </div><br><br>
+                        <div class="col px-5">
+                            <div class="input-group">
+                                <span class="inputborder font input-group-addon w-25">Check-Out
+                                </span>
+                                <input type="date" class="form-control inputborder font d-flex ">
+                            </div>
+                        </div><br><br> <br>
+                        <center> <a><button class=" button1 font  text-white border-0"
+                                    style="height: 40px; width:150px;font-size:large;">
+                                    Search</button></a></center>
+                    </div>
+                </form>
+            </div>
+            <br><br>
+            <!-- =============================================     Flights      ==================================-->
+            <div class="tab-pane" id="2">
+                <div id="exTab2">
+                    <div class="d-flex">
+                        <button class="button2 btn-sm border-0 mx-4 text-light font " href="#oneway"
+                            data-toggle="tab">One
+                            way</button>
+                        <button class="button2 btn-sm  border-0 text-light font " href="#twoway" data-toggle="tab">Two
+                            Way</button>
+                    </div>
+                    <div class="tab-content">
+                        <!-- Oneway -->
+                        <div class="tab-pane active" id="oneway">
+                            <div class="d-flex p-3 mt-2">
+                                <div class="input-group px-5">
+                                    <span class="inputborder font input-group-addon"><i class="fa">&#xf3c5;</i>
+                                    </span>
+                                    <input type="text" class="form-control inputborder font" name="email"
+                                        placeholder="Leaving From">
+                                </div>
+                                <div class="input-group px-5">
+                                    <span class="inputborder font input-group-addon"><i class="fa">&#xf3c5;</i>
+                                    </span>
+                                    <input type="text" class="form-control inputborder font" name="email"
+                                        placeholder="Going To">
+                                </div>
+                            </div>
+                            <br>
+                            <center>
+                                <div class="input-group" style="width: 50%;">
+                                    <span class="inputborder font input-group-addon">Departing
+                                    </span>
+                                    <input type="date" class="form-control inputborder font" name="email">
+                                </div>
+                            </center><br>
+                            <center> <a><button class=" button1 font mb-4 text-white border-0"
+                                        style="height: 40px; width:150px;font-size:large;">
+                                        Search</button></a></center>
+                        </div>
+                        <!-- twoway -->
+                        <div class="tab-pane " id="twoway">
+                            <div class="d-flex mt-2 p-3">
+                                <div class="input-group px-5">
+                                    <span class="inputborder font input-group-addon"><i class="fa">&#xf3c5;</i>
+                                    </span>
+                                    <input type="text" class="form-control inputborder font" name="email"
+                                        placeholder="Leaving From">
+                                </div>
+                                <div class="input-group px-5">
+                                    <span class="inputborder font input-group-addon"><i class="fa">&#xf3c5;</i>
+                                    </span>
+                                    <input type="text" class="form-control inputborder font" name="email"
+                                        placeholder="Going To">
+                                </div>
+                            </div>
+                            <div class="d-flex mt-2 p-3">
+                                <div class="input-group px-5">
+                                    <span class="inputborder mx-2  font input-group-addon">Departing
+                                    </span>
+                                    <input type="date" class="form-control inputborder font" name="email"
+                                        placeholder="Leaving From">
+                                </div>
+                                <div class="input-group px-5">
+                                    <span class="inputborder mx-2  font input-group-addon">Returning
+                                    </span>
+                                    <input type="date" class="form-control inputborder font" name="email"
+                                        placeholder="Going To">
+                                </div>
+                            </div>
+                            <center> <a><button class=" button1 font mt-4 mb-4 text-white border-0"
+                                        style="height: 40px; width:150px;font-size:large;">
+                                        Search</button></a></center>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--=============================================   Things To Do  ==================================-->
+            <div class="tab-pane" id="3">
+                <div class="input-group px-4">
+                    <span class="input-group-addon inputborder font mx-5"><i class="fa">&#xf3c5;</i>
+                    </span>
+                    <input type="text" class="form-control inputborder font" name="email" placeholder="Going To">
+                </div><br>
+                <form>
+                    <div class="row">
+                        <div class="col px-5">
+                            <div class="input-group">
+                                <span class="inputborder font input-group-addon w-25">From
+                                </span>
+                                <input type="date" class="form-control inputborder font " name="email">
+                            </div>
+                        </div><br><br>
+                        <div class="col px-5">
+                            <div class="input-group">
+                                <span class="inputborder font input-group-addon w-25">To
+                                </span>
+                                <input type="date" class="form-control inputborder font d-flex ">
+                            </div>
+                        </div><br><br> <br>
+                        <center> <a><button class=" button1 font mb-5 text-white border-0"
+                                    style="height: 40px; width:150px;font-size:large;">
+                                    Search</button></a>
+                        </center>
+                    </div>
+                </form>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- =============================================     Flight Search End      ==================================-->
+    <br> <br><br> <br><br> <br>
+    <h2 class="textmidline" style="max-width: 1210px; min-width: 300px;">
+        <span class="textmidline2 font fs-2" style="background-color: #ffffff;">About Us</span>
     </h2>
-
     <div class="container" style="max-width: 1010px; min-width: 300pxd;">
         <div class="row">
             <div class="col-sm">
                 <div class="card" style="border:none;">
-                    <h3 style="font-family: 'Abril Fatface', cursive; color: rgb(140, 114, 66);">What we do</h3>
+                    <p>
+                    <h3 class="font2 h2">What we do</h3>
                     <br>
-                    <p style="color: rgb(94, 94, 94);;">
-                        We offer variety of Tours and Trekking packages, with a team of young and dynamic guides and
+                    <p class="text-secondary font fs-2">
+                        We offer variety of Tours and Trekking packages, with a team of young and dynamic guides
+                        and
                         travel
                         assistance
                     </p>
@@ -85,25 +237,23 @@ opacity: 0.3;
             <div class="col-sm">
                 <div class="card" style="border:none;">
                     <p>
-                    <h3 style="font-family: 'Abril Fatface', cursive; color: rgb(140, 114, 66);">How we help</h3>
+                    <h3 class="font2 h2">How we help
+                    </h3>
                     <br>
-                    <p style="color: rgb(94, 94, 94);;">
+                    <p class="text-secondary font fs-2">
                         We provide you with best quotes based on your travelling plans and requirements and the
                         locations.
                     </p>
                 </div>
-
-
-
-
             </div>
             <div class="col-sm">
                 <div class="card col-sm" style="border:none;">
                     <p>
-                    <h3 style="font-family: 'Abril Fatface', cursive; color: rgb(140, 114, 66);">Top Destinations
+                    <h3 class="font2 h2">Top
+                        Destinations
                     </h3>
                     <br>
-                    <ul style="text-align:left; color: rgb(94, 94, 94);;">
+                    <ul style="text-align:left;" class="text-secondary fs-2">
                         <li>Trekking</li>
                         <li>camping and firework</li>
                         <li>mountain flight</li>
@@ -116,45 +266,47 @@ opacity: 0.3;
             </div>
         </div>
     </div>
-    <h2 class="textmidline" style="max-width: 1010px; min-width: 300px; font-size: 16px; color:rgb(89, 89, 89);">
-        <span class="textmidline2">Contact Us</span>
+    <h2 class="textmidline" style="max-width: 1210px; min-width: 300px; font-size: 16px; color:rgb(89, 89, 89);">
+        <span class="textmidline2 font fs-2" style="background-color: #ffffff;">Contact Us</span>
     </h2>
     <br>
-    <form>
+    <form action="/message" method="POST">
         <input type="text" name="name" placeholder="Name" style="width: 50%; border: none; background-color: #f1f1f1; "
-            class="form-control"><br>
-        <input type="text" name="Email" placeholder="Email*" required class="form-control"
-            style="width: 50% ;border: none; background-color: #f1f1f1;">
+            class="form-control fs-2  border-0 rounded-0"><br>
+        <input type="text" name="email" placeholder="Email*" required class="form-control fs-2  border-0 rounded-0""
+            style=" width: 50% ;border: none; background-color: #f1f1f1;" required>
         <br>
-        <textarea name="comments" id="comments"
+        <textarea type="text" name="message" id="comments"
             style="width: 50%; height: 200px;border: none; background-color: #f1f1f1;" placeholder="Message"
-            class="form-control"></textarea><br><br>
-
-
-    </form>
-    <button class="button button2">Send</button><br><br>
-    <p style="font-size: 12px;">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of
+            class="form-control fs-2  border-0 rounded-0""></textarea><br><br>
+        <button type=" submit" class="button1 border-0 rounded-0 px-5 text-white fw-bold border-0 btn-lg font">
+            <p class="px-3 fs-2 pt-2">Send</p>
+        </button><br><br>
+    </form> 
+    <p class="fs-5 font">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of
         Service apply.</p>
-    <h3 class="mt-3" style="font-family: 'Abril Fatface', cursive; color: rgb(140, 114, 66);font-size: 27px ;">
+    <h3 class="mt-5 pt-5 font2 h2">
         Better yet, see us in person!</h3><br><br>
-    <!-- <hr style="width: 50%;"> -->
-    <h2 class="textmidline" style="max-width: 1010px; min-width: 300px; font-size: 16px; color:rgb(89, 89, 89);">
-        <span class="textmidline2">Photo Gallery</span>
+    <h2 class="textmidline mt-5" style="max-width: 1210px; min-width: 300px; font-size: 16px; color:rgb(89, 89, 89);">
+        <span class="textmidline2 font fs-2" style="background-color: #ffffff;">Photo Gallery</span>
     </h2>
-
-    <br><br>
-    <div><a href="https://img1.wsimg.com/isteam/ip/c1512f10-816e-434b-8fbc-f91747269931/image_processing20181012-4-jbs6xr.jpg/:/rs=w:984,h:656"
-            target="_blank" class="imagegallery"><img
-                src="https://img1.wsimg.com/isteam/ip/c1512f10-816e-434b-8fbc-f91747269931/image_processing20181012-4-jbs6xr.jpg/:/rs=w:984,h:656"
-                style="width: 50%;"></div></a><br>
-    <div><a href="https://img1.wsimg.com/isteam/ip/c1512f10-816e-434b-8fbc-f91747269931/nepal-village.jpg/:/rs=w:1280,h:720"
-            target="_blank" class="imagegallery"><img
-                src="https://img1.wsimg.com/isteam/ip/c1512f10-816e-434b-8fbc-f91747269931/nepal-village.jpg/:/rs=w:1280,h:720"
-                style="width: 50%;"></div></a><br>
-    <div><a href="https://img1.wsimg.com/isteam/stock/Wb12gzD/:/rs=w:984,h:657" target="_blank"
-            class="imagegallery"><img src="https://img1.wsimg.com/isteam/stock/Wb12gzD/:/rs=w:984,h:657"
-                style="width: 50%;"></div>
-    </a><br><br><br>
-
-</center>
+    <br><br> 
+    <a
+        href="https://img1.wsimg.com/isteam/ip/c1512f10-816e-434b-8fbc-f91747269931/image_processing20181012-4-jbs6xr.jpg/:/rs=w:984,h:656"> 
+        <img class="w-50 pic"
+            src="https://img1.wsimg.com/isteam/ip/c1512f10-816e-434b-8fbc-f91747269931/image_processing20181012-4-jbs6xr.jpg/:/rs=w:984,h:656"
+            alt=""> 
+    </a> 
+    <br> 
+    <a href="https://img1.wsimg.com/isteam/ip/c1512f10-816e-434b-8fbc-f91747269931/nepal-village.jpg/:/rs=w:1280,h:720"> 
+        <img class="w-50 mt-5 pic"
+            src="https://img1.wsimg.com/isteam/ip/c1512f10-816e-434b-8fbc-f91747269931/nepal-village.jpg/:/rs=w:1280,h:720"
+            alt=""> 
+    </a> 
+    <br> 
+    <a href="https://img1.wsimg.com/isteam/stock/Wb12gzD/:/rs=w:984,h:657"> 
+        <img class="w-50 mt-5 pic" src="https://img1.wsimg.com/isteam/stock/Wb12gzD/:/rs=w:984,h:657" alt=""> 
+    </a> 
+    </a><br><br><br> 
+</center> 
 {% endblock %}

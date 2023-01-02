@@ -1,0 +1,71 @@
+{% extends 'headerfooter.html' %}
+{% block title%} Contact Us {% endblock %}
+{% block style%}
+.hrline {
+display: grid;
+grid-template-columns: 1fr auto 1fr;
+gap: 1rem;
+}
+.hrline::before,
+.hrline::after {
+content: "";
+border-top: 0.1rem solid rgb(198, 198, 198);
+;
+align-self: center;
+}
+.button1 {
+background-color: rgb(163, 133, 77);
+transition-duration: 0.5s;
+box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.235), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+.button1:hover {
+box-shadow: none;
+}
+.form-control:focus {
+outline: 1.5px solid black;
+box-shadow: none;
+}
+{% endblock %}
+{% block body%}
+<div class="container">
+    <div class="row mt-5">
+        <span class="hrline text-center font text-dark fs-2">Leave your message for free quotes and other queries</span>
+    </div>
+</div>
+<section>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-6 col-md-6 col-sm-8">
+                <p class="font2 h2">Drop us a line!</p>
+                <form action="/message" method="POST">
+                    <input type="text" name="name" placeholder="Name" style="border: none; background-color: #f1f1f1; "
+                        class="form-control form-control-lg fs-2 rounded-0"><br>
+                    <input type="email" name="email" placeholder="Email*" required
+                        class="form-control form-control-lg fs-2 rounded-0"
+                        style="border: none; background-color: #f1f1f1;">
+                    <br>
+                    <textarea name="message" style="height: 200px;border: none; background-color: #f1f1f1;"
+                        placeholder="Message" class="form-control form-control-lg fs-2 rounded-0"></textarea><br><br>
+                    <button type="submit"
+                        class="button1 rounded-0 px-4 p-4 font fs-2 fw-bold border-0 text-white col-12">Send</button>
+                </form>
+                <p class="mt-5 font text-secondary fs-5">This site is protected by reCAPTCHA and the Google Privacy
+                    Policy and Terms of Service apply.</p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-4 text-center">
+                <p class="font2 mb-4 h2 d-lg-flex justify-content-lg-start">Better yet, see us in person!</p>
+                <p class="d-lg-flex justify-content-lg-start font text-secondary fs-2">We
+                    love our customers, so feel free to connect
+                    with us.</p>
+                <h1 class="font2 mt-5 text-start">Hillychilly</h1>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <span class="hrline font fs-2 text-dark">Connect With Us</span>
+            <a href="https://www.instagram.com/hillychillytrekking/" target="_blank" class="text-center mt-5"><i
+                    class='bx bxl-instagram'
+                    style="font-size: 40px; color: white; background-color: rgba(225,48,108,255); border-radius: 10px;"></i></a>
+        </div>
+    </div>
+</section>
+{% endblock %}
