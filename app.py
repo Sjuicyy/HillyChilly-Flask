@@ -59,7 +59,7 @@ def message():
         VALUES(%s,%s,%s,%s)''',(name,email,message,id1))
         mysql.connection.commit()
         cursor.close()
-        return f"Done!!"
+        return f"Data added succesfully!!"
 
 
  
@@ -72,6 +72,6 @@ def signup():
         cursor.execute(''' INSERT INTO Signup VALUES(%s,%s)''',(id1,name))
         mysql.connection.commit()
         cursor.close()
-        return f"done"
+        return f"Data added succesfully!!"
 
  
