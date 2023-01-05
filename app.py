@@ -73,5 +73,3 @@ def signup():
         mysql.connection.commit()
         cursor.close()
         return f"Data added succesfully!!"
-
- 
